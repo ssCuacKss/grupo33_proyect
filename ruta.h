@@ -8,6 +8,9 @@
 #ifndef RUTA_H_
 #define RUTA_H_
 
+class ruta{
+}
+};
 
 
 

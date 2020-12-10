@@ -8,6 +8,7 @@
 #ifndef VISITANTE_H_
 #define VISITANTE_H_
 
+#include"persona.h"
 #include"ruta.h"
 #include<iostream>
 #include<string>
@@ -19,17 +20,14 @@ class visitante : public Persona{
 		bool grupo;
 		ruta ruta;
 	public:
-		visitante(string dNi,string name="", string surname="",int age=0,string Uaddress="", string local="",string prov="",string Upais="", bool _discapacidad=false, bool _grupo=false, ruta _ruta);
+		visitante(string, string, string, int, string, string, string, string, bool, bool, string);
 		inline void setDisable(bool _discapacidad){ if(_discapacidad==false) discapacidad=false; else discapacidad=true;}
 		inline bool getDisable(){return discapacidad;}
 		inline void setGrupo(bool _grupo){ if(_grupo==false) grupo=false; else grupo=true;}
 		inline bool getGrupo(){return grupo;}
-		inline void setruta(ruta _ruta){ ruta=_ruta;}
-		inline ruta getruta(){return ruta;}
+		inline void setruta(string _ruta){ruta.nombre= _ruta;}
+		inline string getruta(){return ruta.nombre;}
 };
-
-#endif
-
 
 
 #endif /* VISITANTE_H_ */

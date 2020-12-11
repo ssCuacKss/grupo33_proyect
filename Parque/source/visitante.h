@@ -10,6 +10,7 @@
 
 #include"persona.h"
 #include"ruta.h"
+
 #include<iostream>
 #include<string>
 using namespace std;
@@ -25,8 +26,8 @@ class visitante : public Persona{
 		inline bool getDisable(){return discapacidad;}
 		inline void setGrupo(bool _grupo){ if(_grupo==false) grupo=false; else grupo=true;}
 		inline bool getGrupo(){return grupo;}
-		inline void setruta(string _ruta){ruta.nombre= _ruta;}
-		inline string getruta(){return ruta.nombre;}
+		inline void setruta(string _ruta){ruta.setNombre( _ruta);}
+		inline string getruta(){return ruta.getNombre();}
 };
 
 

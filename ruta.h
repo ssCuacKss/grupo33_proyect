@@ -4,9 +4,10 @@
  *  Created on: 3 dic. 2020
  *      Author: david
  */
-#include <string.h>
+
 #ifndef RUTA_H_
 #define RUTA_H_
+#include <string>
 
 class ruta{
 	private:
@@ -31,15 +32,15 @@ class ruta{
 		inline int getDificultad(){return dificultad;}
 		inline string getNombre(){return nombre;}
 
-		inline void setLongitud(int longitud_){longitud=longitud_;}
-		inline void setRecorrido(string recorrido_){recorrido=recorrido_;}
-		inline void setTiempo(int tiempo_){tiempo=tiempo_;}
-		inline void setJornada(int jornada_){tipoJornada=jornada_;}
-		inline void setPaisaje(string paisaje_){paisaje=paisaje_;}
-		inline void setTransporte(int transporte_){transporte=transporte_;}
-		inline void setAforo(int aforo_){aforo=aforo_;}
-		inline void setDificultad(int dificultad_){dificultad=dificultada_;}
-		inline void setNombre(string nombre_){nombre=nombre_;}
+		inline void setLongitud(int p1){longitud=p1;}
+		inline void setRecorrido(string p1){recorrido=p1;}
+		inline void setTiempo(int p1){tiempo=p1;}
+		inline void setJornada(int p1){tipoJornada=p1;}
+		inline void setPaisaje(string p1){paisaje=p1;}
+		inline void setTransporte(int p1){transporte=p1;}
+		inline void setAforo(int p1){aforo=p1;}
+		inline void setDificultad(int p1){dificultad=p1;}
+		inline void setNombre(string p1){nombre=p1;}
 };
 
 #endif /* RUTA_H_ */

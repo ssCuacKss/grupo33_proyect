@@ -21,7 +21,8 @@ class ruta{
 		int dificultad;
 		string nombre;
 	public:
-		ruta();
+		ruta(int _longitud=0,string _recorrido="",int _tiempo=0,int _jornada=0,string _paisaje="",int _transporte=0,int _aforo=0,
+				int _dificultad=0,string _nombre="");
 		inline int getLongitud(){return longitud;}
 		inline string getRecorrido(){return recorrido;}
 		inline int getTiempo(){return tiempo;}

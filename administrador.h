@@ -21,10 +21,12 @@ class admin : public Persona{
 		list <ruta> rutas;
 	public:
 		admin(string dNi,string name="", string surname="",int telefono=0,string Uaddress="", string email="",string birthdate="");
-		void setMonitores(list <monitor> _monitores);
+		void leeMonitores();
+		void setMonitores();
 		inline list <monitor> getMonitores(){return monitores;}
 		bool addMonitores(monitor _monitor);
 		bool delMonitores(monitor _monitor);
+		void leeVisitantes();
 		void setVisitantes(list<visitante> _visitantes);
 		inline list <visitante> getVisitantes(){return visitantes;}
 		bool delVisitantes(visitante _visitante);
@@ -33,12 +35,13 @@ class admin : public Persona{
 		visitante findVisitante(string _name,string _surname);
 		monitor findMonitor(string _dni);
 		admin findAdmin(string _dni);
+		void leeAdmin();
+		void leeRutas();
 		void setRutas(list <ruta> _rutas);
 		inline list<ruta> getRutas(){return rutas;}
 		void setAdmin(list <admin> _admins);
 		inline list <admin> getAdmin(){return administradores;}
 		bool delAdmin(string _dni);
-		bool modAdmin(string_dni);
 };
 
 #endif /* ADMINISTRADOR_H_ */

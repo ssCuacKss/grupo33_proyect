@@ -66,13 +66,13 @@ TEST(Persona, ConstructorCopiaDefecto) {
 }
 TEST(ruta,setAforo){
   ruta r;
-  setAforo(20);
+  r.setAforo(20);
   EXPECT_EQ(20, r.getAforo());
 
 }
 TEST(ruta,setNombre){
   ruta r;
-  setNombre("laguna");
+  r.setNombre("laguna");
   EXPECT_EQ("laguna", r.getNombre());
 }
 

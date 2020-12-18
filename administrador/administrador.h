@@ -20,7 +20,7 @@ class admin : public Persona{
 		list <visitante> visitantes;
 		list <ruta> rutas;
 	public:
-		admin(string dNi,string name="", string surname="",int telefono=0,string Uaddress="", string email="",string birthdate="");
+		admin(string dNi="",string name="", string surname="",int telefono=0,string Uaddress="", string email="",string birthdate="");
 		void leeMonitores();
 		void setMonitores();
 		inline list <monitor> getMonitores(){return monitores;}

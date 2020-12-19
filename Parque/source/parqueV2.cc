@@ -7,7 +7,7 @@
 
 #include"parque.h"
 
-parque::parque(string _localizacion, string _provincia, string _inauguracion,list<string> _premios, list<ruta> _rutas, list<visitante> _visitantes, list<Cuenta> _cuentas)
+parque::parque(string _localizacion, string _provincia, int _superficie, string _inauguracion,list<string> _premios, list<ruta> _rutas, list<visitante> _visitantes, list<Cuenta> _cuentas, string _fecha)
 {
 	//rutas
 			string recorridox;
@@ -104,6 +104,9 @@ parque::parque(string _localizacion, string _provincia, string _inauguracion,lis
 										i->apuntarAusencia(ausentex);
 										}
 								}
+	//admins
+
+
 								archivo_entrada.close();
 								ifstream archivo_entrada;
 								archivo_entrada.open(localizacion+"admin.txt");
@@ -126,15 +129,36 @@ parque::parque(string _localizacion, string _provincia, string _inauguracion,lis
 										i->setProvincia(provx);
 										archivo_entrada>>Upaisx;
 										i->setPais(Upaisx);
+
 									}
 								}
 								archivo_entrada.close();
 
 
-
-		localizacion=_localizacion;
+				localizacion=_localizacion;
 				provincia=_provincia;
 				inauguracion=_inauguracion;
 				premios=_premios;
+				superficie=_superficie;
+				fecha=_fecha;
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

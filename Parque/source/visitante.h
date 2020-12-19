@@ -15,7 +15,7 @@ class visitante : public Persona{
 		bool grupo;
 		ruta ruta;
 	public:
-		visitante(string, string, string, int, string, string, string, string, bool, bool, string);
+		visitante(string, string, string, int , string, string ,string, bool, bool, string);
 		inline void setDisable(bool _discapacidad){ if(_discapacidad==false) discapacidad=false; else discapacidad=true;}
 		inline bool getDisable(){return discapacidad;}
 		inline void setGrupo(bool _grupo){ if(_grupo==false) grupo=false; else grupo=true;}

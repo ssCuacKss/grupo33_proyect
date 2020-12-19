@@ -7,8 +7,8 @@
 
 #include"visitante.h"
 
-visitante::visitante(string dNi,string name="", string surname="",int age=0,string Uaddress="", string local="",string prov="",string Upais="",
-bool _discapacidad=false, bool _grupo=false, string _ruta) : Persona(dNi, name, surname, age, Uaddress,  local, prov, Upais)
+visitante::visitante(string dni,string name, string surname,int telefono,string direccion, string email,string birthdate,
+bool _discapacidad=false, bool _grupo=false, string _ruta) : Persona(dNi, name, surname, telefono, direccion,  email, birthdate)
 {
 discapacidad= _discapacidad;
 grupo= _grupo;

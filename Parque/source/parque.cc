@@ -133,8 +133,6 @@ parque::parque(string _localizacion, string _provincia, int _superficie, string 
 									}
 								}
 								archivo_entrada.close();
-
-
 				localizacion=_localizacion;
 				provincia=_provincia;
 				inauguracion=_inauguracion;

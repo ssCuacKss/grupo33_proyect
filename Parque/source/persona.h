@@ -1,3 +1,4 @@
+
 #ifndef persona_h
 #define persona_h
 #include<iostream>
@@ -5,34 +6,28 @@
 using namespace std;
 class Persona{
 	private:
-		string nombre;
-		string apellidos;
-		string dni;
-		string direccion;
-		string localidad;
-		string provincia;
-		string pais;
-		int edad;
+		string nombre_;
+		string apellidos_;
+		string dni_;
+		string direccion_;
+		string email_;
+		string birthdate_;
+		int telefono_;
 	public:
-		Persona(string dNi,string name="", string surname="",int age=0,string Uaddress="", string local="",string prov="",string Upais="");
-		string getNombre(){return nombre;};
-		string getApellidos(){return apellidos;};
-		string getDNI(){return dni;};
-		string getDireccion(){return direccion;};
-		string getLocalidad(){return localidad;};
-		string getProvincia(){return provincia;};
-		string getPais(){return pais;};
-		string getApellidosyNombre(){return apellidos+", "+nombre;};
-		bool mayor(){if(edad>=18){return true;}else{return false;}}
-		int getEdad(){return edad;};
-		void setNombre(string Uname){nombre=Uname;};
-		void setApellidos(string Usub){apellidos=Usub;};
-		void setDNI(string Udni){dni=Udni;};
-		bool setEdad(int Uage){if(Uage>=0){edad=Uage;return true;}else{return false;}};
-		void setDireccion(string Uaddress){direccion=Uaddress;};
-		void setLocalidad(string local){localidad=local;};
-		void setProvincia(string prov){provincia=prov;};
-		void setPais(string Upais){pais=Upais;};
+		Persona(string dNi="",string name="", string surname="",int telefono=0,string Uaddress="", string email="",string birthdate="");
+		string getNombre(){return nombre_;};
+		string getApellidos(){return apellidos_;};
+		string getDNI(){return dni_;};
+		string getDireccion(){return direccion_;};
+		string getBirthdate(){return birthdate_;};
+		string getEmail(){return email_;};
+		int getTelefono(){return telefono_;};
+		void setNombre(string name){nombre_=name;};
+		void setApellidos(string apellidos){apellidos_=apellidos;};
+		void setDNI(string dni){dni_=dni;};
+		bool setTelefono(int telefono){if((telefono>100000000)&&(telefono<1000000000)){telefono_=telefono;return true;}else{return false;}};
+		void setDireccion(string Uaddress){direccion_=Uaddress;};
+		void setBirthdate(string birthdate){birthdate_=birthdate;};
+		void setEmail(string email){email_=email;};
 };
 #endif
-

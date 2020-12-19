@@ -47,7 +47,88 @@ parque::parque(string _localizacion, string _provincia, string _inauguracion,lis
 		archivo_entrada.close();
 
 	//visitantes
+				bool discapacidadx;
+				bool grupox;
+				string rutax;
+		ifstream archivo_entrada;
+				archivo_entrada.open(localizacion+"visitantes.txt");
+				if (archivo_entrada.fail()) cout<< "El archivo no se abrio correctamente"<<endl;
+				for(list<visitante>::iterator i=visitantes.begin(); i<10;i++){
+					while(archivo_entrada!='\n'){
+								archivo_entrada>>discapacidadx;
+								i->setDisable(discapacidadx);
+								archivo_entrada>>grupox;
+								i->setGrupo(grupox);
+								archivo_entrada>>rutax;
+								i->setruta(rutax);
+							}
+				}
+				archivo_entrada.close();
 
+	//monitores
+						string dNix;
+						string namex;
+						string surnamex;
+						int agex;
+						float nominx;
+						string Uaddresx;
+						string localx;
+						string provx;
+						string Upaisx;
+						bool ausentex;
+
+								ifstream archivo_entrada;
+								archivo_entrada.open(localizacion+"monitores.txt");
+								if (archivo_entrada.fail()) cout<< "El archivo no se abrio correctamente"<<endl;
+								for(list<monitor>::iterator i=monitores.begin(); i<10;i++){
+									while(archivo_entrada!='\n'){
+										archivo_entrada>>dNix;
+										i->setDNI(dNix);
+										archivo_entrada>>namex;
+										i->setNombre(namex);
+										archivo_entrada>>surnamex;
+										i->setApellidos(surnamex);
+										archivo_entrada>>agex;
+										i->setEdad(agex);
+										archivo_entrada>>nominx;
+										i->setNomina(nominx);
+										archivo_entrada>>Uaddresx;
+										i->setDireccion(Uaddresx);
+										archivo_entrada>>localx;
+										i->setLocalidad(localx);
+										archivo_entrada>>provx;
+										i->setProvincia(provx);
+										archivo_entrada>>Upaisx;
+										i->setPais(Upaisx);
+										archivo_entrada>>ausentex;
+										i->apuntarAusencia(ausentex);
+										}
+								}
+								archivo_entrada.close();
+								ifstream archivo_entrada;
+								archivo_entrada.open(localizacion+"admin.txt");
+								if (archivo_entrada.fail()) cout<< "El archivo no se abrio correctamente"<<endl;
+								for(list<admin>::iterator i=admins.begin(); i<10;i++){
+									while(archivo_entrada!='\n'){
+										archivo_entrada>>dNix;
+										i->setDNI(dNix);
+										archivo_entrada>>namex;
+										i->setNombre(namex);
+										archivo_entrada>>surnamex;
+										i->setApellidos(surnamex);
+										archivo_entrada>>agex;
+										i->setEdad(agex);
+										archivo_entrada>>Uaddresx;
+										i->setDireccion(Uaddresx);
+										archivo_entrada>>localx;
+										i->setLocalidad(localx);
+										archivo_entrada>>provx;
+										i->setProvincia(provx);
+										archivo_entrada>>Upaisx;
+										i->setPais(Upaisx);
+									}
+								}
+								archivo_entrada.close();
 
 
 

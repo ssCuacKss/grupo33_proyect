@@ -35,3 +35,4 @@ class Persona{
 		void setPais(string Upais){pais=Upais;};
 };
 #endif
+

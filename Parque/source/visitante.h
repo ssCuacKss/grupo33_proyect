@@ -26,3 +26,4 @@ class visitante : public Persona{
 
 
 #endif /* VISITANTE_H_ */
+

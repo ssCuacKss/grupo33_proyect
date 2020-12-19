@@ -43,4 +43,4 @@ class admin : public Persona{
 		bool delAdmin(string _dni);
 };
 
-#endif /* ADMINISTRADOR_H_ */
+#endif

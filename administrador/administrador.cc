@@ -1,7 +1,6 @@
 /*
  * administrador.cc
  *
- *  Created on: 11 dic. 2020
  *      Author: david
  */
 
@@ -14,7 +13,7 @@
 	{
 		leeMonitores();
 		leeAdmin();			//En el constructor se cargan las
-		leeVisitantes();			//listas con los datos de los ficheros
+		leeVisitantes();	//listas con los datos de los ficheros
 		leeRutas();
 	}
 

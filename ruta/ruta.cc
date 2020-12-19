@@ -1,7 +1,6 @@
 /*
  * ruta.cc
  *
- *  Created on: 12 dic. 2020
  *      Author: david
  */
 

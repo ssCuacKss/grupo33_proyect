@@ -1,18 +1,18 @@
 /*
  * administrador.h
  *
- *  Created on: 11 dic. 2020
  *      Author: david
  */
 
 #ifndef ADMINISTRADOR_H_
 #define ADMINISTRADOR_H_
 #include <list>
+#include <string>
 #include "persona.h"
 #include "monitor.h"
 #include "visitante.h"
 #include "ruta.h"
-
+#include "iostream"
 class admin : public Persona{
 	private:
 		list <monitor> monitores;

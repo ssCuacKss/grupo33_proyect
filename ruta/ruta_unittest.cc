@@ -1,7 +1,6 @@
 /*
  * ruta_unittest.cc
  *
- *  Created on: 17 dic. 2020
  *      Author: david
  */
 

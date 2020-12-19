@@ -1,7 +1,6 @@
 /*
  * administrador_unittest.cc
  *
- *  Created on: 18 dic. 2020
  *      Author: david
  */
 
@@ -9,8 +8,8 @@
 #include "administrador.h"
 #include "gtest/gtest.h"
 
-TEST(administrador, ConstructorParametrosDefecto) {
-  administrador a;
+TEST(admin, ConstructorParametrosDefecto) {
+  admin a;
 
   EXPECT_EQ("", p.getDNI());
   EXPECT_EQ("", p.getNombre());
@@ -22,8 +21,8 @@ TEST(administrador, ConstructorParametrosDefecto) {
 
 }
 
-TEST(Persona, ConstructorParametros) {
-  Persona p("44XX", "Carlos", "Gutierrez", 911804488, "C/ Mesa 1", "papopepo@gmail.com", "20/11/2000");
+TEST(admin, ConstructorParametros) {
+  admin p("44XX", "Carlos", "Gutierrez", 911804488, "C/ Mesa 1", "papopepo@gmail.com", "20/11/2000");
 
   EXPECT_EQ("44XX", p.getDNI());
   EXPECT_EQ("Carlos", p.getNombre());
@@ -35,10 +34,10 @@ TEST(Persona, ConstructorParametros) {
 
 }
 
-TEST(Persona, ConstructorCopiaDefecto) {
-  Persona p("44XX", "Carlos", "Gutierrez", 911804488, "C/ Mesa 1", "papopepo@gmail.com", "20/11/2000");
-  Persona q(p);
-  Persona r=q;
+TEST(admin, ConstructorCopiaDefecto) {
+  admin p("44XX", "Carlos", "Gutierrez", 911804488, "C/ Mesa 1", "papopepo@gmail.com", "20/11/2000");
+  admin q(p);
+  admin r=q;
 
   EXPECT_EQ("44XX", q.getDNI());
   EXPECT_EQ("Carlos", q.getNombre());
@@ -57,8 +56,8 @@ TEST(Persona, ConstructorCopiaDefecto) {
   EXPECT_EQ(911804488, r.getTelefono());
 
 }
-TEST(Persona,setTelefono){
-  Persona p;
+TEST(admin,setTelefono){
+  admin p;
   EXPECT_FALSE(p.setTelefono(1));
   EXPECT_FALSE(p.setTelefono(124523));
   EXPECT_FALSE(p.setTelefono(56345));

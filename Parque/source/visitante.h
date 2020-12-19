@@ -1,9 +1,3 @@
-/*
- * Visitante.h
- *
- *  Created on: 9 dic. 2020
- *      Author: Jesús
- */
 
 #ifndef VISITANTE_H_
 #define VISITANTE_H_

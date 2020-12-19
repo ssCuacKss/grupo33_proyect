@@ -16,7 +16,7 @@
 #include"visitante.h"
 #include"ruta.h"
 #include"cuenta.h"
-#include"monitor.h"
+#include "monitor.h"
 #include"admin.h"
 #include"persona.h"
 
@@ -39,8 +39,8 @@ public:
 	parque(string, string, int, string, list<string>, list<ruta>, list<visitante>, list<Cuenta>,string);
 	void setLocal(string _localizacion){localizacion=_localizacion;}
 	void setProv(string _provincia){provincia=_provincia;}
-	void setSurface(int _superficie){superficie=_superficie;}ç
-	void setFecha(string _fecha){fecha=_fecha}
+	void setSurface(int _superficie){superficie=_superficie;}
+	void setFecha(string _fecha){fecha=_fecha;}
 };
 
 

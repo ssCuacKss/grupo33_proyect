@@ -9,7 +9,7 @@
 #include "gtest/gtest.h"
 
 TEST(admin, ConstructorParametrosDefecto) {
-  admin a;
+  admin p;
 
   EXPECT_EQ("", p.getDNI());
   EXPECT_EQ("", p.getNombre());

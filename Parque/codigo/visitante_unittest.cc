@@ -20,7 +20,7 @@ TEST(visitante, ConstructorParametrosDefecto) {
 
 
 TEST(Visitante, ConstructorCopiaDefecto) {
-  visitante p("44XX", "Carlos", "Gutierrez Fernandez", 911804488, "C/ Mesa 1", "sn1990cagufe@sn.es", "20/11/2000");
+  visitante p("44XX", "Carlos", "Gutierrez Fernandez", 911804488, "C/ Mesa 1", "sn1990cagufe@sn.es", "20/11/1990");
   visitante q(p);
   visitante r=q;
 

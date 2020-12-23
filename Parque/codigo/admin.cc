@@ -1,9 +1,3 @@
-/*
- * administrador.cc
- *
- *  Created on: 11 dic. 2020
- *      Author: david
- */
 
 #include "../codigo/admin.h"
 
@@ -58,7 +52,7 @@
 			std::cout<<"error al abrir el fichero";
 		}
 	}
-	bool admin::addMonitores(monitor _monitor)   //añade a la lista un monitor
+	bool admin::addMonitores(monitor _monitor)   //aÃ±ade a la lista un monitor
 	{
 		list<monitor>::iterator it;
 		for(it=monitores.begin();it!=monitores.end();it++)

@@ -34,7 +34,7 @@ class monitor : public Persona{
         string email="" ,string birthdate="", float nomina, list<ruta> ruta,
 		list<visitante> visitantes,bool ausente);
 
-        inline void setNomina(float nomina){nomina=nomin;}
+        inline void setNomina(float nomina){nomin=nomina;}
         inline float getNomina(){return nomin;}
         inline ruta getRuta(){return rut;}
 

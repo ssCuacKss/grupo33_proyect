@@ -31,6 +31,6 @@ class Persona{
 		bool setTelefono(int telefono){if((telefono>100000000)&&(telefono<1000000000)){telefono_=telefono;return true;}else{return false;}};
 		void setDireccion(string Uaddress){direccion_=Uaddress;};
 		void setBirthdate(string birthdate){birthdate_=birthdate;};
-		void setEmail(string email){email_=email; string contraseña; cin>>contraseña; cuenta->setAccount(email,contraseña);};
+		void setEmail(string email){email_=email; string contraseña; cin>>contraseña; cuenta.setAccount(email,contraseña);};
 };
 #endif

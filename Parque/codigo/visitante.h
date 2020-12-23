@@ -4,9 +4,8 @@
 
 #include<iostream>
 #include<string>
-
-#include "../codigo/persona.h"
-#include "../codigo/ruta.h"
+#include "persona.h"
+#include "ruta.h"
 using namespace std;
 
 class visitante : public Persona{

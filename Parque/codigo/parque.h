@@ -49,8 +49,9 @@ public:
 	string getInauguracion(){return inauguracion;}
 	void setInauguracion(string _inauguracion){inauguracion=_inauguracion;}
 	void setPremio(string premio){ premios.push_back(premio);}
-	void setPremios(_premios);
+	void setPremios(list<string>_premios_premios);
 	list<string> getPremios(){return premios;}
+	void escribevisitante();
 };
 
 

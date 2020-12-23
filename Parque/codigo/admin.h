@@ -6,10 +6,10 @@
 #include <iostream>
 #include <list>
 
-#include "../codigo/monitor.h"
-#include "../codigo/persona.h"
-#include "../codigo/ruta.h"
-#include "../codigo/visitante.h"
+#include "monitor.h"
+#include "persona.h"
+#include "ruta.h"
+#include "visitante.h"
 
 class admin : public Persona{
 	private:

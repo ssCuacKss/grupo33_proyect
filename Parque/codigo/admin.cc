@@ -5,7 +5,7 @@
  *      Author: david
  */
 
-#include "../codigo/admin.h"
+#include "admin.h"
 
 #define MAX 255
 
@@ -26,16 +26,16 @@
 		if(f.is_open())
 		{
 			char dni[MAX],nombre[MAX],apellidos[MAX],telefono[MAX],direccion[MAX],nomina[MAX],email[MAX],birthdate[MAX],ausente[MAX];
-			while(f.getline(dni,MAX,","))
+			while(f.getline(dni,MAX,'-'))
 			{
-				getline(f, nombre,',');
-				f.getline(apellidos,MAX,",");
-				f.getline(telefono,MAX,",");
-				f.getline(direccion,MAX,",");
-				f.getline(nomina,MAX,",");
-				f.getline(email,MAX,",");
-				f.getline(birthdate,MAX,"\n");
-				f.getline(ausente,MAX,"\n");
+				getline(f, nombre,'-');
+				f.getline(apellidos,MAX,'-');
+				f.getline(telefono,MAX,'-');
+				f.getline(direccion,MAX,'-');
+				f.getline(nomina,MAX,'-');
+				f.getline(email,MAX,'-');
+				f.getline(birthdate,MAX,'-');
+				f.getline(ausente,MAX,'-');
 			}
 			monitor aux(nombre,apellidos,atoi(telefono),direccion,stof(nomina),email,birthdate,ausente); //ausente tipo Bool
 			monitores.push_back(aux);
@@ -50,8 +50,8 @@
 		{
 			for(it=monitores.begin();it!=monitores.end();it++)
 			{
-				f<<(*it).getDNI()+','+(*it).getNombre()+','+(*it).getApellidos()+(*it).getTelefono()+','
-					+(*it).getDireccion()+','+(*it).getEmail()+','+(*it).getBirthdate()+','+"\n";
+				f<<(*it).getDNI()+'-'+(*it).getNombre()+'-'+(*it).getApellidos()+(*it).getTelefono()+'-'
+					+(*it).getDireccion()+'-'+(*it).getEmail()+'-'+(*it).getBirthdate()+'-'+'-';
 			}
 			f.close();
 		}else{
@@ -96,17 +96,17 @@
 		{
 			char dni[MAX],nombre[MAX],apellidos[MAX],telefono[MAX],direccion[MAX],email[MAX],birthdate[MAX],
 			disable[MAX],grupo[MAX],ruta[MAX];
-			while(f.getline(dni,MAX,","))
+			while(f.getline(dni,MAX,'-'))
 			{
-				f.getline(nombre,MAX,",");
-				f.getline(apellidos,MAX,",");
-				f.getline(telefono,MAX,",");
-				f.getline(direccion,MAX,",");
-				f.getline(email,MAX,",");
-				f.getline(birthdate,MAX,"\n");
-				f.getline(disable,MAX,"\n");
-				f.getline(grupo,MAX,"\n");
-				f.getline(ruta,MAX,"\n");
+				f.getline(nombre,MAX,'-');
+				f.getline(apellidos,MAX,'-');
+				f.getline(telefono,MAX,'-');
+				f.getline(direccion,MAX,'-');
+				f.getline(email,MAX,'-');
+				f.getline(birthdate,MAX,'-');
+				f.getline(disable,MAX,'-');
+				f.getline(grupo,MAX,'-');
+				f.getline(ruta,MAX,'-');
 			}
 			visitante aux(nombre,apellidos,atoi(telefono),direccion,email,birthdate,disable,grupo,ruta);  //disable y grupo son bool y ruta es tipo ruta
 			visitantes.push_back(aux);
@@ -123,9 +123,9 @@
 		{
 			for(it=visitantes.begin();it!=visitantes.end();it++)
 			{
-				f<<(*it).getDNI()+","+(*it).getNombre()+","+(*it).getApellidos()+(*it).getTelefono()+","
-					+(*it).getDireccion()+","+(*it).getEmail()+","+(*it).getBirthdate()+","
-					+(*it).getDisable()+","+(*it).getGrupo+"n"+(*it).getRuta+"\n";
+				f<<(*it).getDNI()+'-'+(*it).getNombre()+'-'+(*it).getApellidos()+(*it).getTelefono()+'-'
+					+(*it).getDireccion()+'-'+(*it).getEmail()+'-'+(*it).getBirthdate()+'-'
+					+(*it).getDisable()+'-'+(*it).getGrupo+"n"+(*it).getruta()+'-';
 			}
 			f.close();
 		}else{
@@ -225,22 +225,22 @@
 		if(f.is_open())
 		{
 			char longitud[MAX],recorrido[MAX],tiempo[MAX],jornada[MAX],paisaje[MAX],transporte[MAX],aforo[MAX],dificultad[MAX],nombre[MAX];
-			while(f.getline(longitud,MAX,","))
+			while(f.getline(longitud,MAX,'-'))
 			{
-				f.getline(recorrido,MAX,",");
-				f.getline(tiempo,MAX,",");
-				f.getline(jornada,MAX,",");
-				f.getline(paisaje,MAX,",");
-				f.getline(transporte,MAX,",");
-				f.getline(aforo,MAX,",");
-				f.getline(dificultad,MAX,"\n");
-				f.getline(nombre,MAX,"\n");
+				f.getline(recorrido,MAX,'-');
+				f.getline(tiempo,MAX,'-');
+				f.getline(jornada,MAX,'-');
+				f.getline(paisaje,MAX,'-');
+				f.getline(transporte,MAX,'-');
+				f.getline(aforo,MAX,'-');
+				f.getline(dificultad,MAX,'-');
+				f.getline(nombre,MAX,'-');
 			}
 			ruta aux(stoi(longitud),recorrido,stoi(tiempo),stoi(jornada),paisaje,stoi(transporte),stoi(aforo),stoi(dificultad),nombre);
 			rutas.push_back(aux);
 		}
 	}
-	void admin::leeAdministradores()
+	void admin::leeAdmin()
 	{
 		administradores.clear();
 		std::fstream f;
@@ -248,20 +248,20 @@
 		if(f.is_open())
 		{
 			char dni[MAX],nombre[MAX],apellidos[MAX],telefono[MAX],direccion[MAX],email[MAX],birthdate[MAX];
-			while(f.getline(dni,MAX,","))
+			while(f.getline(dni,MAX,'-'))
 			{
-				f.getline(nombre,MAX,",");
-				f.getline(apellidos,MAX,",");
-				f.getline(telefono,MAX,",");
-				f.getline(direccion,MAX,",");
-				f.getline(email,MAX,",");
-				f.getline(birthdate,MAX,"\n");
+				f.getline(nombre,MAX,'-');
+				f.getline(apellidos,MAX,'-');
+				f.getline(telefono,MAX,'-');
+				f.getline(direccion,MAX,'-');
+				f.getline(email,MAX,'-');
+				f.getline(birthdate,MAX,'-');
 			}
 			admin aux(nombre,apellidos,atoi(telefono),direccion,email,birthdate); //
 			administradores.push_back(aux);
 		}
 	}
-	void admin::setRutas()
+	void admin::setRutas(list <ruta> _rutas)
 	{
 		list<ruta>::iterator it;
 		std::ofstream f;
@@ -270,8 +270,8 @@
 		{
 			for(it=rutas.begin();it!=rutas.end();it++)
 			{
-				f<<(*it).getLongitud()+","+(*it).getRecorrido()+","+(*it).getTiempo()+(*it).getJornada()+","
-					+(*it).getPaisaje()+","+(*it).getTransporte()+","+(*it).getAforo()+","+(*it).getDificultad+","+(*it).getNombre+ "\n";
+				f<<(*it).getLongitud()+'-'+(*it).getRecorrido()+'-'+(*it).getTiempo()+(*it).getJornada()+'-'
+					+(*it).getPaisaje()+'-'+(*it).getTransporte()+'-'+(*it).getAforo()+'-'+(*it).getDificultad+'-'+(*it).getNombre+ '-';
 			}
 			f.close();
 		}else{
@@ -287,8 +287,8 @@
 		{
 			for(it=administradores.begin();it!=administradores.end();it++)
 			{
-				f<<(*it).getDNI()+','+(*it).getNombre()+','+(*it).getApellidos()+(*it).getTelefono()+','
-					+(*it).getDireccion()+','+(*it).getEmail()+','+(*it).getBirthdate()+','+"\n";
+				f<<(*it).getDNI()+'-'+(*it).getNombre()+'-'+(*it).getApellidos()+(*it).getTelefono()+'-'
+					+(*it).getDireccion()+'-'+(*it).getEmail()+'-'+(*it).getBirthdate()+'-'+'-';
 			}
 			f.close();
 			}else{

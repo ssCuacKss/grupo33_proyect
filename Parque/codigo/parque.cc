@@ -51,7 +51,6 @@ parque::parque(string _localizacion, string _provincia, int _superficie, string 
 								string dNix;
 								string namex;
 								string surnamex;
-								int agex;
 								float nominx;
 								string Uaddresx;
 								string emailx;
@@ -71,10 +70,9 @@ parque::parque(string _localizacion, string _provincia, int _superficie, string 
 						i->setNombre(namex);
 						archivo_entrada>>surnamex;
 						i->setApellidos(surnamex);
-						archivo_entrada>>agex;
-						i->setEdad(agex);
+						archivo_entrada>>birthdatex;
+						i->setBirthdate(birthdatex);
 						archivo_entrada>>nominx;
-						i->setNomina(nominx);
 						archivo_entrada>>Uaddresx;
 						i->setDireccion(Uaddresx);
 						archivo_entrada>>emailx;
@@ -104,8 +102,8 @@ parque::parque(string _localizacion, string _provincia, int _superficie, string 
 										i->setNombre(namex);
 										archivo_entrada>>surnamex;
 										i->setApellidos(surnamex);
-										archivo_entrada>>agex;
-										i->setEdad(agex);
+										archivo_entrada>>birthdatex;
+										i->setBirthdate(birthdatex);
 										archivo_entrada>>nominx;
 										i->setNomina(nominx);
 										archivo_entrada>>Uaddresx;
@@ -132,10 +130,8 @@ parque::parque(string _localizacion, string _provincia, int _superficie, string 
 										i->setNombre(namex);
 										archivo_entrada>>surnamex;
 										i->setApellidos(surnamex);
-										archivo_entrada>>agex;
-										i->setEdad(agex);
-										archivo_entrada>>nominx;
-										i->setNomina(nominx);
+										archivo_entrada>>birthdatex;
+										i->setBirthdate(birthdatex);
 										archivo_entrada>>Uaddresx;
 										i->setDireccion(Uaddresx);
 										archivo_entrada>>emailx;
@@ -150,7 +146,7 @@ parque::parque(string _localizacion, string _provincia, int _superficie, string 
 	//cuentas
 								string correox;
 								string passwordx;
-								bool permisox;
+								string permisox;
 								string aux;
 								archivo_entrada.close();
 								ifstream archivo_entrada;
@@ -177,7 +173,7 @@ parque::parque(string _localizacion, string _provincia, int _superficie, string 
 				fecha=_fecha;
 
 }
-void parque::setPremios(_premios){
+void parque::setPremios(list<string>_premios){
 	int cont=1
 	int aux=0;
 	string premio;
@@ -198,7 +194,18 @@ void parque::setPremios(_premios){
 
 }
 
+void parque::escribevisitante(){
+	//Escritura en archivo
+	ofstream archivo_salida;
+	        archivo_salida.open(localizacion+"_visitantes.txt");
+	        if (archivo_salida.fail()) cout<< "El archivo no se abrio correctamente"<<endl;
+	        for(list<visitante>::iterator i=visitantes.begin(); i<10;i++){
+	            while(archivo_salida!='\n'){
 
+	            }
+	        }
+	        archivo_salida.close();
+}
 
 
 

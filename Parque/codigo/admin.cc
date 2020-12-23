@@ -255,7 +255,7 @@
 				f.getline(email,MAX,'/n');
 				f.getline(birthdate,MAX,'/n');
 			}
-			admin aux(dni, nombre,apellidos,atoi(telefono),direccion,email,birthdate); //
+			admin aux(dni, nombre,apellidos,atoi(telefono),direccion,email,birthdate, 1); //
 			administradores.push_back(aux);
 		}
 	}

@@ -24,7 +24,7 @@ TEST(ruta, ConstructorParametrosDefecto) {
 
 }
 
-TEST(Persona, ConstructorParametros) {
+TEST(ruta, ConstructorParametros) {
   ruta r(2, "larga", 5, 2, "escarpado", 1, 20,2,"El sendero de la muerte");
 
   EXPECT_EQ(2, r.getLongitud());
@@ -39,7 +39,7 @@ TEST(Persona, ConstructorParametros) {
 
 }
 
-TEST(Persona, ConstructorCopiaDefecto) {
+TEST(ruta, ConstructorCopiaDefecto) {
   ruta r(2, "larga", 5, 2, "escarpado", 1, 20,2,"El sendero de la muerte");
   ruta q(r);
   ruta t=q;

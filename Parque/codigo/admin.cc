@@ -3,7 +3,7 @@
 
 #define MAX 255
 
-	admin::admin(string dNi="",string name="", string surname="",int telefono=0,string Uaddress="", string email="",string birthdate="", int permiso=1)
+	admin::admin(string dNi="",string name="", string surname="",int telefono=0,string Uaddress="", string email="",string birthdate="")
 	:Persona(dNi, name, surname, telefono, Uaddress, email, birthdate)
 	{
 		leeMonitores();

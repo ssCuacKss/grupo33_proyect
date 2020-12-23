@@ -6,7 +6,9 @@
 
 #ifndef RUTA_H_
 #define RUTA_H_
+
 #include <string>
+using namespace std;
 
 class ruta{
 	private:

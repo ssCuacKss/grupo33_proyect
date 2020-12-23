@@ -15,6 +15,7 @@
 # Points to the root of Google Test, relative to where this file is.
 # Remember to tweak this if you move this file.
 GTEST_DIR = googletest/
+
 # Where to find user code.
 # USER_DIR = ../samples
 
@@ -28,7 +29,7 @@ CXXFLAGS += -g -Wall -Wextra -pthread -std=gnu++11
 
 # All tests produced by this Makefile.  Remember to add new tests you
 # created to the list.
-TESTS = persona_unittest
+TESTS = ruta_unittest
 
 # All Google Test headers.  Usually you shouldn't change this
 # definition.
@@ -72,7 +73,9 @@ gtest_main.a : gtest-all.o gtest_main.o
 
 ruta.o : ruta.cc ruta.h
 
-ruta_unittest.o : ruda_unittest.cc ruda.h ruta.cc
+ruta_unittest.o : ruta_unittest.cc ruta.h ruta.cc
 
 ruta_unittest : ruta.o ruta_unittest.o gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $^ -o $@
+	
+

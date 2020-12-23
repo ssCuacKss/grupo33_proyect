@@ -7,6 +7,7 @@
 #include "ruta.h"
 #include "gtest/gtest.h"
 
+
 TEST(ruta, ConstructorParametrosDefecto) {
   ruta r;
 

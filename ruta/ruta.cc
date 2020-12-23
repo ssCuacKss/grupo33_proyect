@@ -4,8 +4,6 @@
  *      Author: david
  */
 
-#include <string>
-using namespace std;
 #include "ruta.h"
 
 ruta::ruta(int _longitud,string _recorrido,int _tiempo,int _jornada,string _paisaje,int _transporte,int _aforo,

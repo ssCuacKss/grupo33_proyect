@@ -1,9 +1,3 @@
-/*
- * administrador_unittest.cc
- *
- *      Author: david
- */
-
 #include "persona.h"
 #include "administrador.h"
 #include "gtest/gtest.h"

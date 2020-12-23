@@ -17,10 +17,11 @@ class admin : public Persona{
 		list <admin> administradores;
 		list <visitante> visitantes;
 		list <ruta> rutas;
+		int permiso=0;
 	public:
 		admin(string dNi="",string name="", string surname="",int telefono=0,string Uaddress="",
 		string email="",
-		string birthdate="");
+		string birthdate="", int permiso=1);
 		void leeMonitores();
 		void setMonitores();
 		inline list <monitor> getMonitores(){return monitores;}

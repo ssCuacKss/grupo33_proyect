@@ -46,6 +46,16 @@ parque::parque(string _localizacion, string _provincia, int _superficie, string 
 		}
 		archivo_entrada.close();
 
+
+
+								string dNix;
+								string namex;
+								string surnamex;
+								int agex;
+								float nominx;
+								string Uaddresx;
+								string emailx;
+								string birthdatex;
 	//visitantes
 				bool discapacidadx;
 				bool grupox;
@@ -55,27 +65,33 @@ parque::parque(string _localizacion, string _provincia, int _superficie, string 
 				if (archivo_entrada.fail()) cout<< "El archivo no se abrio correctamente"<<endl;
 				for(list<visitante>::iterator i=visitantes.begin(); i<10;i++){
 					while(archivo_entrada!='\n'){
-								archivo_entrada>>discapacidadx;
-								i->setDisable(discapacidadx);
-								archivo_entrada>>grupox;
-								i->setGrupo(grupox);
-								archivo_entrada>>rutax;
-								i->setruta(rutax);
-							}
+						archivo_entrada>>dNix;
+						i->setDNI(dNix);
+						archivo_entrada>>namex;
+						i->setNombre(namex);
+						archivo_entrada>>surnamex;
+						i->setApellidos(surnamex);
+						archivo_entrada>>agex;
+						i->setEdad(agex);
+						archivo_entrada>>nominx;
+						i->setNomina(nominx);
+						archivo_entrada>>Uaddresx;
+						i->setDireccion(Uaddresx);
+						archivo_entrada>>emailx;
+						i->setDireccion(emailx);
+						archivo_entrada>>birthdatex;
+						i->setDireccion(birthdatex);
+						archivo_entrada>>discapacidadx;
+						i->setDisable(discapacidadx);
+						archivo_entrada>>grupox;
+						i->setGrupo(grupox);
+						archivo_entrada>>rutax;
+						i->setruta(rutax);
+						}
 				}
 				archivo_entrada.close();
 
 	//monitores
-						string dNix;
-						string namex;
-						string surnamex;
-						int agex;
-						float nominx;
-						string Uaddresx;
-						string localx;
-						string provx;
-						string Upaisx;
-						bool ausentex;
 
 								ifstream archivo_entrada;
 								archivo_entrada.open(localizacion+"_monitores.txt");
@@ -94,14 +110,10 @@ parque::parque(string _localizacion, string _provincia, int _superficie, string 
 										i->setNomina(nominx);
 										archivo_entrada>>Uaddresx;
 										i->setDireccion(Uaddresx);
-										archivo_entrada>>localx;
-										i->setLocalidad(localx);
-										archivo_entrada>>provx;
-										i->setProvincia(provx);
-										archivo_entrada>>Upaisx;
-										i->setPais(Upaisx);
-										archivo_entrada>>ausentex;
-										i->apuntarAusencia(ausentex);
+										archivo_entrada>>emailx;
+										i->setDireccion(emailx);
+										archivo_entrada>>birthdatex;
+										i->setDireccion(birthdatex);
 										}
 								}
 								archivo_entrada.close();
@@ -122,17 +134,16 @@ parque::parque(string _localizacion, string _provincia, int _superficie, string 
 										i->setApellidos(surnamex);
 										archivo_entrada>>agex;
 										i->setEdad(agex);
+										archivo_entrada>>nominx;
+										i->setNomina(nominx);
 										archivo_entrada>>Uaddresx;
 										i->setDireccion(Uaddresx);
-										archivo_entrada>>localx;
-										i->setLocalidad(localx);
-										archivo_entrada>>provx;
-										i->setProvincia(provx);
-										archivo_entrada>>Upaisx;
-										i->setPais(Upaisx);
-
+										archivo_entrada>>emailx;
+										i->setDireccion(emailx);
+										archivo_entrada>>birthdatex;
+										i->setDireccion(birthdatex);
+										}
 									}
-								}
 								archivo_entrada.close();
 
 
@@ -156,7 +167,8 @@ parque::parque(string _localizacion, string _provincia, int _superficie, string 
 									}
 								}
 								archivo_entrada.close();
-				archivo_entrada.close();
+
+
 				localizacion=_localizacion;
 				provincia=_provincia;
 				inauguracion=_inauguracion;

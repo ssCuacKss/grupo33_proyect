@@ -31,7 +31,6 @@ class ruta{
 		inline int getAforo(){return aforo;}
 		inline int getDificultad(){return dificultad;}
 		inline string getNombre(){return nombre;}
-
 		inline void setLongitud(int longitud_){longitud=longitud_;}
 		inline void setRecorrido(string recorrido_){recorrido=recorrido_;}
 		inline void setTiempo(int tiempo_){tiempo=tiempo_;}

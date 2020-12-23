@@ -2,7 +2,7 @@
 
 
 #include "../codigo/visitante.h"
-
+#include "../codigo/persona.h"
 #include "../codigo/googletest/include/gtest/gtest.h"
 
 TEST(visitante, ConstructorParametrosDefecto) {

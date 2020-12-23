@@ -21,7 +21,7 @@ class admin : public Persona{
 	public:
 		admin(string dNi="",string name="", string surname="",int telefono=0,string Uaddress="",
 		string email="",
-		string birthdate="", int permiso=1);
+		string birthdate="");
 		void leeMonitores();
 		void setMonitores();
 		inline list <monitor> getMonitores(){return monitores;}

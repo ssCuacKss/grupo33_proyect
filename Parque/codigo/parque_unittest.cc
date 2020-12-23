@@ -15,7 +15,7 @@ TEST(parque, ConstructorParametrosDefecto) {
 }
 
 
-TEST(Visitante, ConstructorCopiaDefecto) {
+TEST(parque, ConstructorCopiaDefecto) {
   parque p("Sierra Nevada", "Granada", 85.883, "14/diciembre/1996", sierranevada_premios, "20/11/2020");
   parque q(p);
   parque r=q;

@@ -1,4 +1,5 @@
 #include "../codigo/monitor.h"
+#include "../codigo/persona.h"
 
 #include "../codigo/googletest/include/gtest/gtest.h"
 

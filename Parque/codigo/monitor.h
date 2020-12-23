@@ -30,10 +30,8 @@ class monitor : public Persona{
         bool ausent;
         list<incidencia> incidencia_;
     public:
-        monitor(string dNi="",string name="", string surname="",int telefono=0,string Uaddress="",
-        string email="" ,string birthdate="", float nomina, list<ruta> ruta,
-		list<visitante> visitantes,bool ausente);
-
+        monitor(string dNi="",string name="", string surname="",int telefono=0,string Uaddress="", string email="",string birthdate="",
+        		float nomina,bool ausente);
         inline void setNomina(float nomina){nomin=nomina;}
         inline float getNomina(){return nomin;}
         inline ruta getRuta(){return rut;}

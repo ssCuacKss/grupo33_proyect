@@ -14,12 +14,12 @@
 #include<list>
 #include<vector>
 
-#include "../codigo/admin.h"
-#include "../codigo/cuenta.h"
-#include "../codigo/monitor.h"
-#include "../codigo/persona.h"
-#include "../codigo/ruta.h"
-#include "../codigo/visitante.h"
+#include "admin.h"
+#include "cuenta.h"
+#include "monitor.h"
+#include "persona.h"
+#include "ruta.h"
+#include "visitante.h"
 
 using namespace std;
 
@@ -52,6 +52,7 @@ public:
 	void setPremios(list<string>_premios_premios);
 	list<string> getPremios(){return premios;}
 	void escribevisitante();
+	void escriberuta();
 };
 
 

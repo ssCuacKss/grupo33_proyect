@@ -25,36 +25,36 @@ parque::parque(string _localizacion, string _provincia, int _superficie, string 
 		if (archivo_entrada.fail()) cout<< "El archivo no se abrio correctamente"<<endl;
 		for(list<ruta>::iterator i=rutas.begin(); i<10;i++){
 			while(archivo_entrada!='\n'){
-						archivo_entrada>>recorridox;
-						i->setRecorrido(recorridox);
-						archivo_entrada>>longitudx;
-						i->setLongitud(longitudx);
-						archivo_entrada>>tiempox;
-						i->setTiempo(tiempox);
-						archivo_entrada>>paisajex;
-						archivo_entrada>>tipoJornadax;
-						i->setJornada(tipoJornadax);
-						archivo_entrada>>transportex;
-						i->setTransporte(transportex);
-						archivo_entrada>>aforox;
-						i->setAforo(aforox);
-						archivo_entrada>>dificultadx;
-						i->setDificultad(dificultadx);
-						archivo_entrada>>nombrex;
-						i->setNombre(nombrex);
-					}
+				archivo_entrada>>recorridox;
+				i->setRecorrido(recorridox);
+				archivo_entrada>>longitudx;
+				i->setLongitud(longitudx);
+				archivo_entrada>>tiempox;
+				i->setTiempo(tiempox);
+				archivo_entrada>>paisajex;
+				archivo_entrada>>tipoJornadax;
+				i->setJornada(tipoJornadax);
+				archivo_entrada>>transportex;
+				i->setTransporte(transportex);
+				archivo_entrada>>aforox;
+				i->setAforo(aforox);
+				archivo_entrada>>dificultadx;
+				i->setDificultad(dificultadx);
+				archivo_entrada>>nombrex;
+				i->setNombre(nombrex);
+			}
 		}
 		archivo_entrada.close();
 
 
 
-								string dNix;
-								string namex;
-								string surnamex;
-								float nominx;
-								string Uaddresx;
-								string emailx;
-								string birthdatex;
+		string dNix;
+		string namex;
+		string surnamex;
+		float nominx;
+		string Uaddresx;
+		string emailx;
+		string birthdatex;
 	//visitantes
 				bool discapacidadx;
 				bool grupox;
@@ -174,7 +174,7 @@ parque::parque(string _localizacion, string _provincia, int _superficie, string 
 
 }
 void parque::setPremios(list<string>_premios){
-	int cont=1
+	int cont=1;
 	int aux=0;
 	string premio;
 	if(_premios==premios){
@@ -207,8 +207,26 @@ void parque::escribevisitante(){
 	        archivo_salida.close();
 }
 
-
-
+void parque::escriberuta(){
+//Escritura en rutas
+ofstream archivo_salida;
+    archivo_salida.open(localizacion+"_rutas.txt");
+    if (archivo_salida.fail()) cout<< "El archivo no se abrio correctamente"<<endl;
+    for(list<ruta>::iterator i=rutas.begin(); i<10;i++){
+        while(archivo_salida!='\n'){
+        archivo_salida<<i->getRecorrido() + "-";
+        archivo_salida<<i->getLongitud() + "-";
+        archivo_salida<<i->getTiempo() + "-";
+        archivo_salida<<i->getPaisaje() + "-";
+        archivo_salida<<i->getJornada() + "-";
+        archivo_salida<<i->getTransporte() + "-";
+        archivo_salida<<i->getAforo() + "-";
+        archivo_salida<<i->getDificultad() + "-";
+        archivo_salida<<i->getNombre();
+        }
+    }
+    archivo_salida.close();
+}
 
 
 

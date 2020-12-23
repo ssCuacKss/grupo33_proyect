@@ -4,7 +4,8 @@
  *  Created on: 3 dic. 2020
  *      Author: david
  */
-#include <string.h>
+
+#include<string>
 #ifndef RUTA_H_
 #define RUTA_H_
 
@@ -21,7 +22,7 @@ class ruta{
 		string nombre;
 
 	public:
-		ruta();
+		ruta(int _longitud,string _recorrido,int _tiempo,int _jornada,string _paisaje,int _transporte,int _aforo,int _dificultad, string _nombre);
 		inline int getLongitud(){return longitud;}
 		inline string getRecorrido(){return recorrido;}
 		inline int getTiempo(){return tiempo;}

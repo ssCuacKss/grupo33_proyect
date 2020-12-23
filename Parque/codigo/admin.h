@@ -27,7 +27,7 @@ class admin : public Persona{
 		bool addMonitores(monitor _monitor);
 		bool delMonitores(monitor _monitor);
 		void leeVisitantes();
-		void setVisitantes(list<visitante> _visitantes);
+		void setVisitantes();
 		inline list <visitante> getVisitantes(){return visitantes;}
 		bool delVisitantes(visitante _visitante);
 		bool addVisitante(visitante _visitante);
@@ -39,7 +39,7 @@ class admin : public Persona{
 		void leeRutas();
 		void setRutas(list <ruta> _rutas);
 		inline list<ruta> getRutas(){return rutas;}
-		void setAdmin(list <admin> _admins);
+		void setAdmin();
 		inline list <admin> getAdmin(){return administradores;}
 		bool delAdmin(string _dni);
 };

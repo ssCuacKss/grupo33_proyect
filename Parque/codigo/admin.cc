@@ -4,11 +4,11 @@
 #define MAX 255
 
 	admin::admin(string dNi="",string name="", string surname="",int telefono=0,string Uaddress="", string email="",string birthdate="")
-	:Persona(dNi, name, surname, age, Uaddress, email, birthdate)
+	:Persona(string dNi,string name, string surname,int telefono,string Uaddress, string email,string birthdate)
 	{
 		leeMonitores();
 		leeAdmin();			//En el constructor se cargan las
-		leeVisitantes();			//listas con los datos de los ficheros
+		leeVisitantes();		//listas con los datos de los ficheros
 		leeRutas();
 	}
 
@@ -22,16 +22,21 @@
 			char dni[MAX],nombre[MAX],apellidos[MAX],telefono[MAX],direccion[MAX],nomina[MAX],email[MAX],birthdate[MAX],ausente[MAX];
 			while(f.getline(dni,MAX,","))
 			{
-				getline(f, nombre,',');
-				f.getline(apellidos,MAX,",");
-				f.getline(telefono,MAX,",");
-				f.getline(direccion,MAX,",");
-				f.getline(nomina,MAX,",");
-				f.getline(email,MAX,",");
-				f.getline(birthdate,MAX,"\n");
+				getline(f, nombre,"-");
+				f.getline(apellidos,MAX,"-");
+				f.getline(telefono,MAX,"-");
+				f.getline(direccion,MAX,"-");
+				f.getline(nomina,MAX,"-");
+				f.getline(email,MAX,"-");
+				f.getline(birthdate,MAX,"-");
 				f.getline(ausente,MAX,"\n");
 			}
-			monitor aux(nombre,apellidos,atoi(telefono),direccion,stof(nomina),email,birthdate,ausente); //ausente tipo Bool
+			bool ausentex;
+			if(ausente=="true"){ausentex=true;
+			}else{ausentex=false;
+			     }
+			
+			monitor aux(nombre,apellidos,atoi(telefono),direccion,stof(nomina),email,birthdate,ausentex); //ausente tipo Bool
 			monitores.push_back(aux);
 		}
 	}
@@ -44,8 +49,8 @@
 		{
 			for(it=monitores.begin();it!=monitores.end();it++)
 			{
-				f<<(*it).getDNI()+','+(*it).getNombre()+','+(*it).getApellidos()+(*it).getTelefono()+','
-					+(*it).getDireccion()+','+(*it).getEmail()+','+(*it).getBirthdate()+','+"\n";
+				f<<(*it).getDNI()+"-"+(*it).getNombre()+"-"+(*it).getApellidos()+"-"+(*it).getTelefono()+"-"
+					+(*it).getDireccion()+"-"+(*it).getEmail()+"-"+(*it).getBirthdate()+"-"+"\n";
 			}
 			f.close();
 		}else{
@@ -90,19 +95,28 @@
 		{
 			char dni[MAX],nombre[MAX],apellidos[MAX],telefono[MAX],direccion[MAX],email[MAX],birthdate[MAX],
 			disable[MAX],grupo[MAX],ruta[MAX];
-			while(f.getline(dni,MAX,","))
+			while(f.getline(dni,MAX,"-"))
 			{
-				f.getline(nombre,MAX,",");
-				f.getline(apellidos,MAX,",");
-				f.getline(telefono,MAX,",");
-				f.getline(direccion,MAX,",");
-				f.getline(email,MAX,",");
-				f.getline(birthdate,MAX,"\n");
-				f.getline(disable,MAX,"\n");
-				f.getline(grupo,MAX,"\n");
+				f.getline(nombre,MAX,"-");
+				f.getline(apellidos,MAX,"-");
+				f.getline(telefono,MAX,"-");
+				f.getline(direccion,MAX,"-");
+				f.getline(email,MAX,"-");
+				f.getline(birthdate,MAX,"-");
+				f.getline(disable,MAX,"-");
+				f.getline(grupo,MAX,"-");
 				f.getline(ruta,MAX,"\n");
 			}
-			visitante aux(nombre,apellidos,atoi(telefono),direccion,email,birthdate,disable,grupo,ruta);  //disable y grupo son bool y ruta es tipo ruta
+			bool disablex,grupox;
+			if(disable=="true"){
+				disablex=true;}
+			else{disablex=false;
+			}
+			if(grupo=="true"){
+				grupox=true;
+			}else{grupox=false;
+			}
+			visitante aux(nombre,apellidos,atoi(telefono),direccion,email,birthdate,disablex,grupox);  //disable y grupo son bool y ruta es tipo ruta
 			visitantes.push_back(aux);
 		}else{
 			std::cout<<"error al abrir fichero";
@@ -117,9 +131,9 @@
 		{
 			for(it=visitantes.begin();it!=visitantes.end();it++)
 			{
-				f<<(*it).getDNI()+","+(*it).getNombre()+","+(*it).getApellidos()+(*it).getTelefono()+","
-					+(*it).getDireccion()+","+(*it).getEmail()+","+(*it).getBirthdate()+","
-					+(*it).getDisable()+","+(*it).getGrupo+"n"+(*it).getRuta+"\n";
+				f<<(*it).getDNI()+"-"+(*it).getNombre()+"-"+(*it).getApellidos()+"-"(*it).getTelefono()+"-"
+					+(*it).getDireccion()+"-"+(*it).getEmail()+"-"+(*it).getBirthdate()+"-"
+					+(*it).getDisable()+"-"+(*it).getGrupo+"-"+(*it).getRuta+"\n";
 			}
 			f.close();
 		}else{
@@ -219,15 +233,15 @@
 		if(f.is_open())
 		{
 			char longitud[MAX],recorrido[MAX],tiempo[MAX],jornada[MAX],paisaje[MAX],transporte[MAX],aforo[MAX],dificultad[MAX],nombre[MAX];
-			while(f.getline(longitud,MAX,","))
+			while(f.getline(longitud,MAX,"-"))
 			{
-				f.getline(recorrido,MAX,",");
-				f.getline(tiempo,MAX,",");
-				f.getline(jornada,MAX,",");
-				f.getline(paisaje,MAX,",");
-				f.getline(transporte,MAX,",");
-				f.getline(aforo,MAX,",");
-				f.getline(dificultad,MAX,"\n");
+				f.getline(recorrido,MAX,"-");
+				f.getline(tiempo,MAX,"-");
+				f.getline(jornada,MAX,"-");
+				f.getline(paisaje,MAX,"-");
+				f.getline(transporte,MAX,"-");
+				f.getline(aforo,MAX,"-");
+				f.getline(dificultad,MAX,"-");
 				f.getline(nombre,MAX,"\n");
 			}
 			ruta aux(stoi(longitud),recorrido,stoi(tiempo),stoi(jornada),paisaje,stoi(transporte),stoi(aforo),stoi(dificultad),nombre);
@@ -242,14 +256,14 @@
 		if(f.is_open())
 		{
 			char dni[MAX],nombre[MAX],apellidos[MAX],telefono[MAX],direccion[MAX],email[MAX],birthdate[MAX];
-			while(f.getline(dni,MAX,","))
+			while(f.getline(dni,MAX,"-"))
 			{
-				f.getline(nombre,MAX,",");
-				f.getline(apellidos,MAX,",");
-				f.getline(telefono,MAX,",");
-				f.getline(direccion,MAX,",");
-				f.getline(email,MAX,",");
-				f.getline(birthdate,MAX,"\n");
+				f.getline(nombre,MAX,"-");
+				f.getline(apellidos,MAX,"-");
+				f.getline(telefono,MAX,"-");
+				f.getline(direccion,MAX,"-");
+				f.getline(email,MAX,"-");
+				f.getline(birthdate,MAX,"n");
 			}
 			admin aux(nombre,apellidos,atoi(telefono),direccion,email,birthdate); //
 			administradores.push_back(aux);
@@ -281,8 +295,8 @@
 		{
 			for(it=administradores.begin();it!=administradores.end();it++)
 			{
-				f<<(*it).getDNI()+','+(*it).getNombre()+','+(*it).getApellidos()+(*it).getTelefono()+','
-					+(*it).getDireccion()+','+(*it).getEmail()+','+(*it).getBirthdate()+','+"\n";
+				f<<(*it).getDNI()+"-"+(*it).getNombre()+"-"+(*it).getApellidos()+"-"+(*it).getTelefono()+"-"
+					+(*it).getDireccion()+"-"+(*it).getEmail()+"-"+(*it).getBirthdate()+"-"+"\n";
 			}
 			f.close();
 			}else{

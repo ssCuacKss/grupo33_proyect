@@ -7,7 +7,7 @@
 
 #include"parque.h"
 
-parque::parque(string _localizacion, string _provincia, int _superficie, string _inauguracion,list<string> _premios, list<ruta> _rutas, list<visitante> _visitantes, list<Cuenta> _cuentas, string _fecha)
+parque::parque(string _localizacion, string _provincia, int _superficie, string _inauguracion,list<string> _premios, string _fecha)
 {
 	//rutas
 			string recorridox;
@@ -21,7 +21,7 @@ parque::parque(string _localizacion, string _provincia, int _superficie, string 
 			string nombrex;
 
 	ifstream archivo_entrada;
-		archivo_entrada.open(localizacion+"rutas.txt");
+		archivo_entrada.open(localizacion+"_rutas.txt");
 		if (archivo_entrada.fail()) cout<< "El archivo no se abrio correctamente"<<endl;
 		for(list<ruta>::iterator i=rutas.begin(); i<10;i++){
 			while(archivo_entrada!='\n'){
@@ -51,7 +51,7 @@ parque::parque(string _localizacion, string _provincia, int _superficie, string 
 				bool grupox;
 				string rutax;
 		ifstream archivo_entrada;
-				archivo_entrada.open(localizacion+"visitantes.txt");
+				archivo_entrada.open(localizacion+"_visitantes.txt");
 				if (archivo_entrada.fail()) cout<< "El archivo no se abrio correctamente"<<endl;
 				for(list<visitante>::iterator i=visitantes.begin(); i<10;i++){
 					while(archivo_entrada!='\n'){
@@ -78,7 +78,7 @@ parque::parque(string _localizacion, string _provincia, int _superficie, string 
 						bool ausentex;
 
 								ifstream archivo_entrada;
-								archivo_entrada.open(localizacion+"monitores.txt");
+								archivo_entrada.open(localizacion+"_monitores.txt");
 								if (archivo_entrada.fail()) cout<< "El archivo no se abrio correctamente"<<endl;
 								for(list<monitor>::iterator i=monitores.begin(); i<10;i++){
 									while(archivo_entrada!='\n'){
@@ -104,12 +104,13 @@ parque::parque(string _localizacion, string _provincia, int _superficie, string 
 										i->apuntarAusencia(ausentex);
 										}
 								}
+								archivo_entrada.close();
 	//admins
 
 
 								archivo_entrada.close();
 								ifstream archivo_entrada;
-								archivo_entrada.open(localizacion+"admin.txt");
+								archivo_entrada.open(localizacion+"_admin.txt");
 								if (archivo_entrada.fail()) cout<< "El archivo no se abrio correctamente"<<endl;
 								for(list<admin>::iterator i=admins.begin(); i<10;i++){
 									while(archivo_entrada!='\n'){
@@ -133,6 +134,29 @@ parque::parque(string _localizacion, string _provincia, int _superficie, string 
 									}
 								}
 								archivo_entrada.close();
+
+
+	//cuentas
+								string correox;
+								string passwordx;
+								bool permisox;
+								string aux;
+								archivo_entrada.close();
+								ifstream archivo_entrada;
+								archivo_entrada.open(localizacion+"_cuentas.txt");
+								if (archivo_entrada.fail()) cout<< "El archivo no se abrio correctamente"<<endl;
+								for(list<Cuenta>::iterator i=cuentas.begin(); i<10;i++){
+									while(archivo_entrada!='\n'){
+										archivo_entrada>>correox;
+										aux=correox;
+										archivo_entrada>>passwordx;
+										i->setAccount(aux, passwordx);
+										archivo_entrada>>permisox;
+										i->setPermission(permisox);
+									}
+								}
+								archivo_entrada.close();
+				archivo_entrada.close();
 				localizacion=_localizacion;
 				provincia=_provincia;
 				inauguracion=_inauguracion;
@@ -141,7 +165,26 @@ parque::parque(string _localizacion, string _provincia, int _superficie, string 
 				fecha=_fecha;
 
 }
+void parque::setPremios(_premios){
+	int cont=1
+	int aux=0;
+	string premio;
+	if(_premios==premios){
+		for(int i=0;i<cont; i++){
+			cout<<"indique el nombre del premio recibido"<<endl;
+			cin>>premio;
+			setPremio(premio);
+			cout<<"escriba 1 para añadir otro premio"<<endl;
+			cin>>aux;
+			if(aux==1) cont++;
+			aux=0;
+		}
+	}
+	else{
+		cout<<"ista de premios no asociada al parque o iexistente"<<endl;
+	}
 
+}
 
 
 

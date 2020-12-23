@@ -12,7 +12,6 @@
 #include "persona.h"
 #include "ruta.h"
 #include "visitante.h"
-#include "parque.h"
 using namespace std;
 
 struct incidencia{
@@ -30,9 +29,9 @@ class monitor : public Persona{
         bool ausent;
         list<incidencia> incidencia_;
     public:
-        monitor(string dNi,string name="", string surname="",
-        int age=0,string Uaddress="", string local="",string prov="",string Upais="",
-        float nomina, list<ruta> ruta, list<visitante> visitantes,bool ausente);
+        monitor(string dNi="",string name="", string surname="",int telefono=0,string Uaddress="",
+        string email="" ,string birthdate="", float nomina, list<ruta> ruta,
+		list<visitante> visitantes,bool ausente);
 
         inline void setNomina(float nomina){nomina=nomin;}
         inline float getNomina(){return nomin;}

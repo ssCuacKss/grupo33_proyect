@@ -3,6 +3,7 @@
 #define persona_h
 #include<iostream>
 #include<string>
+#include"cuenta.h"
 using namespace std;
 class Persona{
 	private:
@@ -13,6 +14,7 @@ class Persona{
 		string email_;
 		string birthdate_;
 		int telefono_;
+		Cuenta cuenta;
 	public:
 		Persona(string dNi="",string name="", string surname="",int telefono=0,string Uaddress="", string email="",string birthdate="");
 		string getNombre(){return nombre_;};
@@ -28,6 +30,6 @@ class Persona{
 		bool setTelefono(int telefono){if((telefono>100000000)&&(telefono<1000000000)){telefono_=telefono;return true;}else{return false;}};
 		void setDireccion(string Uaddress){direccion_=Uaddress;};
 		void setBirthdate(string birthdate){birthdate_=birthdate;};
-		void setEmail(string email){email_=email;};
+		void setEmail(string email){email_=email; string contraseña; cin>>contraseña; cuenta->setAccount(email,contraseña);};
 };
 #endif

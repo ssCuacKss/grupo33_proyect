@@ -36,11 +36,20 @@ private:
 	list<Cuenta> cuentas;
 	string fecha;
 public:
-	parque(string, string, int, string, list<string>, list<ruta>, list<visitante>, list<Cuenta>,string);
+	parque(string, string, int, string, list<string> ,string);
 	void setLocal(string _localizacion){localizacion=_localizacion;}
+	string getLocal(){return localizacion;}
+	string getProv(){return provincia;}
+	int getSurface(){return superficie;}
 	void setProv(string _provincia){provincia=_provincia;}
+	string getFecha(){return fecha;}
 	void setSurface(int _superficie){superficie=_superficie;}
 	void setFecha(string _fecha){fecha=_fecha;}
+	string getInauguracion(){return inauguracion;}
+	void setInauguracion(string _inauguracion){inauguracion=_inauguracion;}
+	void setPremio(string premio){ premios.push_back(premio);}
+	void setPremios(_premios);
+	list<string> getPremios(){return premios;}
 };
 
 

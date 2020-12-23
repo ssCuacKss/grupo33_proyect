@@ -9,7 +9,7 @@
 
 using namespace std;
 
-monitor :: monitor(string dNi,string name="", string surname="",int age=0,string Uaddress="", string local="",string prov="",string Upais="",
+monitor :: monitor(string dNi="",string name="", string surname="",int telefono=0,string Uaddress="", string email="",string birthdate="",
 float nomina, list<ruta> ruta, list<visitante> visitantes,bool ausente):
 Persona(dNi, name, surname, age, Uaddress,  local, prov, Upais){
     nomin=nomina;

@@ -3,7 +3,7 @@
 
 #define MAX 255
 
-	admin::admin(string dNi="",string name="", string surname="",int telefono=0,string Uaddress="", string email="",string birthdate="")
+	admin::admin(string dNi="",string name="", string surname="",int telefono=0,string Uaddress="", string email="",string birthdate="", int permiso=1)
 	:Persona(dNi, name, surname, telefono, Uaddress, email, birthdate)
 	{
 		leeMonitores();
@@ -56,7 +56,7 @@
 			std::cout<<"error al abrir el fichero";
 		}
 	}
-	bool admin::addMonitores(monitor _monitor)   //añade a la lista un monitor
+	bool admin::addMonitores(monitor _monitor)   //aÃ±ade a la lista un monitor
 	{
 		list<monitor>::iterator it;
 		for(it=monitores.begin();it!=monitores.end();it++)
